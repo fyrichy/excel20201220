@@ -20,7 +20,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * @desc:
  * 权限拦截器
+ * @author:Richy
+ * @date:2020/12/20/0020
  */
 @Aspect
 @Component
@@ -51,9 +54,10 @@ public class DataPrivilegeAspect {
     }
 
     /**
-     * 查询时，数据权限赋值
-     * @param obj
-     * @param filterAuth
+     * 权限过滤，通过传递的网点，进行过滤后，返回拥有的网点权限
+     * @param obj：对象
+     * @param filterAuth：根据这个注解判断是否需要进行数据权限过滤
+     * @throws Exception
      */
     private void doFilterAuth(Object obj, FilterAuth filterAuth) throws Exception{
         if(null == filterAuth){
